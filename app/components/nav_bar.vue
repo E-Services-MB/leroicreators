@@ -14,9 +14,9 @@ const handle = (e) => {
   <nav>
     <h1>LRC'S</h1>
     <ul id="visible">
-      <li><NuxtLink to="/">Home</NuxtLink></li>
+      <li><NuxtLink to="/">Accueil</NuxtLink></li>
       <li>
-        <NuxtLink to="/who">Who We Are?</NuxtLink>
+        <NuxtLink to="/who">Votre Equipe</NuxtLink>
       </li>
       <li>
         <NuxtLink to="/services">Services</NuxtLink>

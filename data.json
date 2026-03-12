@@ -1,0 +1,166 @@
+{
+  "id": "ecb3c9c1-52d8-5f36-9bfb-db0183d9f4ec",
+  "status": "warning",
+  "platformId": "whatsapp",
+  "name": "CRMR Flow",
+  "connectorId": "cd019d98-7d71-4d31-a126-8da7c1c62b70",
+  "identifier": "908366862364553",
+  "connectionParams": [
+    {
+      "key": "WABA_ID",
+      "value": "504861522319482",
+      "displayName": "Whatsapp Business account ID",
+      "description": "",
+      "visibility": "public"
+    },
+    {
+      "key": "PHONE_NUMBER",
+      "value": "+241 04 88 28 25",
+      "displayName": "Phone number",
+      "description": "",
+      "visibility": "public"
+    },
+    {
+      "key": "REGISTRATION_PIN",
+      "value": "",
+      "displayName": "Registration PIN",
+      "description": "",
+      "visibility": "internal"
+    },
+    {
+      "key": "API_MODE",
+      "value": "",
+      "displayName": "",
+      "description": "",
+      "visibility": "internal"
+    },
+    {
+      "key": "WA_PORTFOLIO_ID",
+      "value": "906814308267485",
+      "displayName": "",
+      "description": "",
+      "visibility": "internal"
+    },
+    {
+      "key": "DATA_LOCALIZATION_REGION",
+      "value": "",
+      "displayName": "",
+      "description": "",
+      "visibility": "internal"
+    }
+  ],
+  "settings": [
+    {
+      "key": "whatsapp:commerce:catalog:is-visible",
+      "value": "true",
+      "displayName": "",
+      "description": "",
+      "visibility": "public"
+    },
+    {
+      "key": "whatsapp_business_manager_messaging_limit",
+      "value": "250",
+      "displayName": "",
+      "description": "",
+      "visibility": "public"
+    },
+    {
+      "key": "conversations_24h_usage",
+      "value": "0",
+      "displayName": "",
+      "description": "",
+      "visibility": "public"
+    }
+  ],
+  "preferences": {
+    "disableProfileFetching": false,
+    "explicitMarketingOptOut": false,
+    "trackAdInitiatedThreads": false,
+    "ignoreSuppressionChecks": false,
+    "isPrivate": false,
+    "disallowMmLite": false
+  },
+  "capabilities": {
+    "messaging": {
+      "displayName": "Messaging capabilities",
+      "status": "active",
+      "name": "messaging",
+      "version": 0,
+      "createdAt": "2026-01-08T19:17:49.867Z",
+      "updatedAt": "2026-01-08T19:17:49.867Z",
+      "outgoing": {
+        "displayName": "Capability to send outgoing messages",
+        "status": "active",
+        "name": "messaging.outgoing",
+        "version": 0,
+        "createdAt": "2026-01-08T19:17:49.867Z",
+        "updatedAt": "2026-01-08T19:17:49.867Z",
+        "mmLite": {
+          "displayName": "Capability to send marketing messages templates using MM-Lite API",
+          "status": "inactive",
+          "name": "messaging.outgoing.mmLite",
+          "version": 0,
+          "createdAt": "2026-01-08T19:17:49.867Z",
+          "updatedAt": "2026-01-08T19:17:49.867Z"
+        }
+      },
+      "incoming": {
+        "displayName": "Capability to receive messages",
+        "status": "active",
+        "name": "messaging.incoming",
+        "version": 0,
+        "createdAt": "2026-01-08T19:17:49.867Z",
+        "updatedAt": "2026-01-08T19:17:49.867Z"
+      },
+      "session": {
+        "start": {
+          "displayName": "Capability to start a session",
+          "status": "active",
+          "name": "messaging.session.start",
+          "version": 0,
+          "createdAt": "2026-01-08T19:17:49.867Z",
+          "updatedAt": "2026-01-08T19:17:49.867Z"
+        },
+        "reply": {
+          "displayName": "Capability to reply to a session",
+          "status": "active",
+          "name": "messaging.session.reply",
+          "version": 0,
+          "createdAt": "2026-01-08T19:17:49.867Z",
+          "updatedAt": "2026-01-08T19:17:49.867Z"
+        }
+      }
+    },
+    "voice": {
+      "pausable": true,
+      "displayName": "Voice capabilities",
+      "status": "active",
+      "name": "voice",
+      "version": 0,
+      "createdAt": "2026-01-08T19:17:49.867Z",
+      "updatedAt": "2026-01-08T19:17:49.867Z",
+      "recording": {
+        "displayName": "Record capability",
+        "status": "active",
+        "paused": false,
+        "name": "voice.recording",
+        "version": 0,
+        "createdAt": "2026-01-08T19:17:49.867Z",
+        "updatedAt": "2026-01-08T19:17:49.867Z"
+      },
+      "transcription": {
+        "displayName": "",
+        "status": "",
+        "name": "",
+        "version": 0,
+        "createdAt": "0001-01-01T00:00:00Z",
+        "updatedAt": "0001-01-01T00:00:00Z"
+      }
+    }
+  },
+  "createdAt": "2026-01-08T19:17:49.866Z",
+  "updatedAt": "2026-03-07T19:44:35.54Z",
+  "resourceOwners": {
+    "crm": { "id": "f14288a5-60f8-40cf-978c-5ac0d3bf8cd5", "type": "group" }
+  }
+}

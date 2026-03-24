@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@font-face {
+  font-family: "Tanker";
+  src: url("assets/fonts/Tanker-Regular.otf") format("opentype");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html,
+body {
+  font-family: "Tanker";
+}

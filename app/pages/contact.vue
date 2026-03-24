@@ -1,118 +1,145 @@
+<script setup lang="ts">
+interface FormState {
+  name: string;
+  contact: string;
+  subject: string;
+  message: string;
+}
+
+const state = reactive<FormState>({
+  name: "",
+  contact: "",
+  subject: "",
+  message: "",
+});
+
+const saveDiapo = async () => {
+  const { data: contacts } = await $fetch("/api/contacts", {
+    method: "POST",
+    body: state,
+  });
+  state.name = "";
+  state.contact = "";
+  state.message = "";
+  state.subject = "";
+};
+</script>
 <template>
-  <section id="contact">
-    <div class="box">
-      <div class="box col contact-info justify-center items-start" id="right">
-        <h2>Contact Info</h2>
-        <p>Ouvert : Lundi - Samedi \ 08h - 18h</p>
-        <a href="mailto:contact@leroicreators.com"
-          >E-Mail : contact@leroicreators.com</a
-        >
-        <br />
-        <a href="tel:+241 62 64 08 30">Telephone : +241 02 64 08 30</a>
-        <ul class="social-links">
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=61555064585962&amp;mibextid=JRoKGi"
-              target="_blank"
-            >
-              <svg
-                viewBox="8 7 45 45"
-                class="unvisible"
-                xmlns="http://www.w3.org/2000/svg"
+  <NuxtLayout>
+    <section id="contact">
+      <div class="box">
+        <div class="box col contact-info justify-center items-start" id="right">
+          <h2>Contact Info</h2>
+          <p>Ouvert : Lundi - Samedi \ 08h - 18h</p>
+          <a href="mailto:contact@leroicreators.com"
+            >E-Mail : contact@leroicreators.com</a
+          >
+          <br />
+          <a href="tel:+241 62 64 08 30">Telephone : +241 02 64 08 30</a>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=61555064585962&amp;mibextid=JRoKGi"
+                target="_blank"
               >
-                <g data-name="Layer 6">
-                  <path
-                    d="M30.54 51H17.22a4.64 4.64 0 0 1-4.63-4.62v-29.1a4.64 4.64 0 0 1 4.63-4.63H45.8M50.43 17.28v29.08A4.64 4.64 0 0 1 45.8 51h-9"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2px"
-                    class=""
-                  ></path>
-                  <circle
-                    cx="50.48"
-                    cy="13.95"
-                    r="1"
-                    fill="#000000"
-                    class="fill-000000"
-                  ></circle>
-                  <path
-                    d="M30.54 51V38.51h-4.4v-5.94h4.4v-5.73a6 6 0 0 1 6-6h6.23v5.65h-4.56A1.47 1.47 0 0 0 36.74 28v4.54h6v6h-6V51"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2px"
-                    class=""
-                  ></path>
-                </g>
-              </svg>
-              <svg
-                viewBox="8 7 45 45"
-                class="visible"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g data-name="Layer 6">
-                  <path
-                    d="M30.54 51H17.22a4.64 4.64 0 0 1-4.63-4.62v-29.1a4.64 4.64 0 0 1 4.63-4.63H45.8M50.43 17.28v29.08A4.64 4.64 0 0 1 45.8 51h-9"
-                    fill="none"
-                    stroke="#ffffff"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2px"
-                    class="stroke-000000"
-                  ></path>
-                  <circle
-                    cx="50.48"
-                    cy="13.95"
-                    r="1"
-                    fill="#ffffff"
-                    class="fill-000000"
-                  ></circle>
-                  <path
-                    d="M30.54 51V38.51h-4.4v-5.94h4.4v-5.73a6 6 0 0 1 6-6h6.23v5.65h-4.56A1.47 1.47 0 0 0 36.74 28v4.54h6v6h-6V51"
-                    fill="none"
-                    stroke="#ffffff"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2px"
-                    class="stroke-000000"
-                  ></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/e-services/" target="_blank">
-              <svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg">
-                <title></title>
-                <g
-                  data-name="ig instagram insta photo"
-                  id="ig_instagram_insta_photo"
+                <svg
+                  viewBox="8 7 45 45"
+                  class="unvisible"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M20.45,13.32a1,1,0,0,0-.57,1.3,4,4,0,1,1-2.31-2.3,1,1,0,1,0,.71-1.87,6,6,0,0,0-6.37,9.85,6,6,0,0,0,8.48,0,6,6,0,0,0,1.36-6.41A1,1,0,0,0,20.45,13.32Z"
-                  ></path>
-                  <circle cx="23" cy="9" r="1"></circle>
-                  <path
-                    d="M28,9a5,5,0,0,0-4.9-5h0A77.11,77.11,0,0,0,9,4,5,5,0,0,0,4,8.92,91.91,91.91,0,0,0,4,23a5,5,0,0,0,4.9,5h0c2.36.22,4.73.34,7.1.34s4.71-.11,7.05-.34A5,5,0,0,0,28,23.08,87.09,87.09,0,0,0,28,9ZM26,23a3,3,0,0,1-3,3h-.1A71.73,71.73,0,0,1,9,26a3,3,0,0,1-3-3.08A92.4,92.4,0,0,1,6,9,3,3,0,0,1,9.09,6q3.44-.31,6.9-.32T23,6a3,3,0,0,1,3,3.08A85.13,85.13,0,0,1,26,23Z"
-                  ></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/e-services/" target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                enable-background="new 0 0 100 100"
-                viewBox="0 0 100 100"
-                id="tiktok"
-              >
-                <g id="Layer_2">
-                  <path
-                    d="M91.97,25.943c-0.293-0.275-0.679-0.416-1.09-0.391c-5.671,0.37-10.224-0.797-13.898-3.569
+                  <g data-name="Layer 6">
+                    <path
+                      d="M30.54 51H17.22a4.64 4.64 0 0 1-4.63-4.62v-29.1a4.64 4.64 0 0 1 4.63-4.63H45.8M50.43 17.28v29.08A4.64 4.64 0 0 1 45.8 51h-9"
+                      fill="none"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      class=""
+                    ></path>
+                    <circle
+                      cx="50.48"
+                      cy="13.95"
+                      r="1"
+                      fill="#000000"
+                      class="fill-000000"
+                    ></circle>
+                    <path
+                      d="M30.54 51V38.51h-4.4v-5.94h4.4v-5.73a6 6 0 0 1 6-6h6.23v5.65h-4.56A1.47 1.47 0 0 0 36.74 28v4.54h6v6h-6V51"
+                      fill="none"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      class=""
+                    ></path>
+                  </g>
+                </svg>
+                <svg
+                  viewBox="8 7 45 45"
+                  class="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g data-name="Layer 6">
+                    <path
+                      d="M30.54 51H17.22a4.64 4.64 0 0 1-4.63-4.62v-29.1a4.64 4.64 0 0 1 4.63-4.63H45.8M50.43 17.28v29.08A4.64 4.64 0 0 1 45.8 51h-9"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      class="stroke-000000"
+                    ></path>
+                    <circle
+                      cx="50.48"
+                      cy="13.95"
+                      r="1"
+                      fill="#ffffff"
+                      class="fill-000000"
+                    ></circle>
+                    <path
+                      d="M30.54 51V38.51h-4.4v-5.94h4.4v-5.73a6 6 0 0 1 6-6h6.23v5.65h-4.56A1.47 1.47 0 0 0 36.74 28v4.54h6v6h-6V51"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2px"
+                      class="stroke-000000"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/e-services/" target="_blank">
+                <svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg">
+                  <title></title>
+                  <g
+                    data-name="ig instagram insta photo"
+                    id="ig_instagram_insta_photo"
+                  >
+                    <path
+                      d="M20.45,13.32a1,1,0,0,0-.57,1.3,4,4,0,1,1-2.31-2.3,1,1,0,1,0,.71-1.87,6,6,0,0,0-6.37,9.85,6,6,0,0,0,8.48,0,6,6,0,0,0,1.36-6.41A1,1,0,0,0,20.45,13.32Z"
+                    ></path>
+                    <circle cx="23" cy="9" r="1"></circle>
+                    <path
+                      d="M28,9a5,5,0,0,0-4.9-5h0A77.11,77.11,0,0,0,9,4,5,5,0,0,0,4,8.92,91.91,91.91,0,0,0,4,23a5,5,0,0,0,4.9,5h0c2.36.22,4.73.34,7.1.34s4.71-.11,7.05-.34A5,5,0,0,0,28,23.08,87.09,87.09,0,0,0,28,9ZM26,23a3,3,0,0,1-3,3h-.1A71.73,71.73,0,0,1,9,26a3,3,0,0,1-3-3.08A92.4,92.4,0,0,1,6,9,3,3,0,0,1,9.09,6q3.44-.31,6.9-.32T23,6a3,3,0,0,1,3,3.08A85.13,85.13,0,0,1,26,23Z"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/e-services/" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  enable-background="new 0 0 100 100"
+                  viewBox="0 0 100 100"
+                  id="tiktok"
+                >
+                  <g id="Layer_2">
+                    <path
+                      d="M91.97,25.943c-0.293-0.275-0.679-0.416-1.09-0.391c-5.671,0.37-10.224-0.797-13.898-3.569
 			c-4.972-3.753-7.35-9.173-7.948-18.125C68.982,3.095,68.347,2.5,67.58,2.5H52.555c-0.804,0-1.456,0.652-1.456,1.456
 			c0.007,19.562,0.016,36.716-0.036,57.302c0.029,1.904,2.871,1.932,2.913,0.008c0.053-20.166,0.038-36.758,0.036-55.853h12.22
 			c0.596,12.428,8.518,23.659,23.286,23.113c0,0,0,12.872,0,12.872c-6.227-0.428-12.185-0.72-17.88-3.711
@@ -121,35 +148,44 @@
 			c5.225,40.104,60.837,36.295,61.71-3.09c0.064-7.238-0.213-21.13-0.158-26.276c2.77,1.224,5.482,2.547,8.368,3.17
 			c4.387,0.951,8.801,1.016,13.205,1.459c0.834,0.102,1.62-0.612,1.602-1.449c0,0,0-15.987,0-15.987
 			C92.431,26.604,92.264,26.219,91.97,25.943z"
-                  ></path>
-                  <path
-                    d="M22.926,66.753c0.262,17.034,23.632,21.77,30.106,5.724c0.288-0.751-0.088-1.593-0.839-1.88
+                    ></path>
+                    <path
+                      d="M22.926,66.753c0.262,17.034,23.632,21.77,30.106,5.724c0.288-0.751-0.088-1.593-0.839-1.88
 			c-0.752-0.289-1.593,0.087-1.881,0.839c-5.238,13.011-24.256,9.18-24.473-4.691c-0.017-6.267,4.321-11.536,10.315-12.53
 			c2.166-0.353,4.702-0.03,7.012-0.041c0.805,0,1.456-0.652,1.456-1.456v-15.16c-0.029-1.9-2.879-1.926-2.913,0
 			c0,0,0,13.674,0,13.674C31.851,49.856,22.964,56.295,22.926,66.753z"
-                  ></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <form>
-        <div class="box" style="padding: 0">
-          <input type="text" placeholder="Noms ..." name="" value="" />
-          <input
-            type="text"
-            placeholder="Email ou Telephone ..."
-            name=""
-            value=""
-          />
-          <input type="text" placeholder="Sujet ..." name="" value="" />
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-        <textarea rows="5" cols="5" placeholder="Message ..."></textarea>
-        <button @click.prevent="" type="submit">Envoyer</button>
-      </form>
-    </div>
-  </section>
+        <form>
+          <div class="box" style="padding: 0">
+            <input type="text" placeholder="Noms ..." v-model="state.name" />
+            <input
+              type="text"
+              placeholder="Email ou Telephone ..."
+              v-model="state.contact"
+            />
+            <input
+              type="text"
+              placeholder="Sujet ..."
+              v-model="state.subject"
+            />
+          </div>
+          <textarea
+            v-model="state.message"
+            rows="5"
+            cols="5"
+            placeholder="Message ..."
+          ></textarea>
+          <button @click.prevent="saveContact" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </NuxtLayout>
 </template>
 <style scoped>
 #contact {

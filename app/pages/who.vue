@@ -48,48 +48,50 @@ const refresh = () => {
 </script>
 
 <template>
-  <section id="who">
-    <div
-      class="carousel justify-center items-center"
-      @animationend="handleAnimationEnd"
-    >
-      <div class="card justify-center align-center" id="refresh">
-        <div class="card-body">
-          <button @click="refresh">recommencer la diapo</button>
-        </div>
-      </div>
+  <NuxtLayout>
+    <section id="who">
       <div
-        v-for="(c, i) of cards"
-        :key="i"
-        @click="change(i)"
-        :data-id="c.id"
-        :class="['card', selected(i)]"
+        class="carousel justify-center items-center"
+        @animationend="handleAnimationEnd"
       >
-        <div class="card-body">
-          <div class="box-img">
-            <img :src="c.bg" alt="" style="border-radius: 0" />
+        <div class="card justify-center align-center" id="refresh">
+          <div class="card-body">
+            <button @click="refresh">recommencer la diapo</button>
           </div>
-          <h3 class="title">{{ c.name }}</h3>
-          <p class="subtitle">{{ c.position }}</p>
         </div>
-        <div class="card-side justify-center align-center">
-          <h3 class="title">Retouch ? Done</h3>
-          <p class="subtitle">
-            Passionné par l'art visuel et la création numérique, Rismet est le
-            maître du détail au sein de Le Roi Creator'S. Grâce à son expertise
-            sur Adobe Photoshop, il transforme des idées brutes en visuels
-            percutants, élégants et uniques.
-          </p>
-          <p class="subtitle">
-            Qu'il s'agisse de créer une identité visuelle, des affiches, des
-            visuels pour les réseaux sociaux, des covers ou des illustrations
-            complexes, Il apporte toujours une touche artistique qui elevate
-            chaque projet.
-          </p>
+        <div
+          v-for="(c, i) of cards"
+          :key="i"
+          @click="change(i)"
+          :data-id="c.id"
+          :class="['card', selected(i)]"
+        >
+          <div class="card-body">
+            <div class="box-img">
+              <img :src="c.bg" alt="" style="border-radius: 0" />
+            </div>
+            <h3 class="title">{{ c.name }}</h3>
+            <p class="subtitle">{{ c.position }}</p>
+          </div>
+          <div class="card-side justify-center align-center">
+            <h3 class="title">Retouch ? Done</h3>
+            <p class="subtitle">
+              Passionné par l'art visuel et la création numérique, Rismet est le
+              maître du détail au sein de Le Roi Creator'S. Grâce à son
+              expertise sur Adobe Photoshop, il transforme des idées brutes en
+              visuels percutants, élégants et uniques.
+            </p>
+            <p class="subtitle">
+              Qu'il s'agisse de créer une identité visuelle, des affiches, des
+              visuels pour les réseaux sociaux, des covers ou des illustrations
+              complexes, Il apporte toujours une touche artistique qui elevate
+              chaque projet.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </NuxtLayout>
 </template>
 
 <style scoped>

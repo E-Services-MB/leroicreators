@@ -2,8 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ["~/assets/css/reset.css"],
-
+  hub: {
+    db: {
+      dialect: "sqlite",
+      driver: "d1-http",
+    },
+  },
   fonts: {
     assets: {
       // The baseURL where font files are served.
@@ -11,6 +15,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxthub/core", "nuxt-auth-utils"],
 });
-

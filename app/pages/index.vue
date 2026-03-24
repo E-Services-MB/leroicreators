@@ -9,37 +9,39 @@ const handleAnimationEnd = (e) => {
 };
 </script>
 <template>
-  <section id="album" :animationend="handleAnimationEnd">
-    <div class="album relative justify-center align-center">
-      <div class="category relative" @click="toggle">
-        <div class="box-img absolute">
-          <img src="~/assets/img/resef.png" alt="" />
+  <NuxtLayout>
+    <section id="album" :animationend="handleAnimationEnd">
+      <div class="album relative justify-center align-center">
+        <div class="category relative" @click="toggle">
+          <div class="box-img absolute">
+            <img src="~/assets/img/resef.png" alt="" />
+          </div>
+          <div class="title absolute">
+            <p>Mariages</p>
+          </div>
         </div>
-        <div class="title absolute">
-          <p>Mariages</p>
+        <div class="category relative" @click="toggle">
+          <div class="box-img absolute">
+            <img src="~/assets/img/resef.png" alt="" />
+          </div>
+          <div class="subtitle absolute">
+            <p>Evenements</p>
+          </div>
+        </div>
+        <div class="category relative" @click="toggle">
+          <div class="box-img absolute">
+            <img src="~/assets/img/resef.png" alt="" />
+          </div>
+          <div class="title absolute">
+            <p>Photographie</p>
+          </div>
         </div>
       </div>
-      <div class="category relative" @click="toggle">
-        <div class="box-img absolute">
-          <img src="~/assets/img/resef.png" alt="" />
-        </div>
-        <div class="subtitle absolute">
-          <p>Evenements</p>
-        </div>
-      </div>
-      <div class="category relative" @click="toggle">
-        <div class="box-img absolute">
-          <img src="~/assets/img/resef.png" alt="" />
-        </div>
-        <div class="title absolute">
-          <p>Photographie</p>
-        </div>
-      </div>
-    </div>
-    <Transition name="swipe" :duration="1000">
-      <StackedGallery v-if="show" @toggle="toggle" />
-    </Transition>
-  </section>
+      <Transition name="swipe" :duration="1000">
+        <StackedGallery v-if="show" @toggle="toggle" />
+      </Transition>
+    </section>
+  </NuxtLayout>
 </template>
 <style scoped>
 @keyframes swipeUp {

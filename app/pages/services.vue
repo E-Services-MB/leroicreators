@@ -93,37 +93,39 @@ function endDrag(e) {
 }
 </script>
 <template>
-  <section id="services">
-    <div
-      class="carousel"
-      @mousedown="startDrag"
-      @mousemove="drag"
-      @mouseup="endDrag"
-      @mouseleave="endDrag"
-    >
+  <NuxtLayout>
+    <section id="services">
       <div
-        v-for="s of services"
-        :key="s.id"
-        class="card"
-        :style="{
-          transform: `translateX(${currentOffset + dragOffset}px)`,
-        }"
+        class="carousel"
+        @mousedown="startDrag"
+        @mousemove="drag"
+        @mouseup="endDrag"
+        @mouseleave="endDrag"
       >
-        <div class="card-img">
-          <NuxtImg :src="s.bg" />
-        </div>
-        <div class="card-body">
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.price }} FCFA</p>
-          <button>Ajouter au devis</button>
+        <div
+          v-for="s of services"
+          :key="s.id"
+          class="card"
+          :style="{
+            transform: `translateX(${currentOffset + dragOffset}px)`,
+          }"
+        >
+          <div class="card-img">
+            <NuxtImg :src="s.bg" />
+          </div>
+          <div class="card-body">
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.price }} FCFA</p>
+            <button>Ajouter au devis</button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="controls">
-      <button @click="goPrev">←</button>
-      <button @click="goNext">→</button>
-    </div>
-  </section>
+      <div class="controls">
+        <button @click="goPrev">←</button>
+        <button @click="goNext">→</button>
+      </div>
+    </section>
+  </NuxtLayout>
 </template>
 <style scoped>
 .card {
